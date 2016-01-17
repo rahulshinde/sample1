@@ -54,35 +54,35 @@ function init() {
 
 	//orange
 	light1 = new THREE.PointLight( 0xf4bd82, 1, 4500 );
-	// light1.add( new THREE.Mesh( sphere, new THREE.MeshBasicMaterial( { color: 0xf4bd82 } ) ) );
+	light1.add( new THREE.Mesh( sphere, new THREE.MeshBasicMaterial( { color: 0xf4bd82 } ) ) );
 	light1.position.set( -40, 0, -10 );
 
 	lightGroup.add( light1 );
-	// scene.add( light1 );
+	scene.add( light1 );
 
 	//pink
 	light2 = new THREE.PointLight( 0xfc86a8, 1, 4500 );
-	// light2.add( new THREE.Mesh( sphere, new THREE.MeshBasicMaterial( { color: 0xf482c6 } ) ) );
+	light2.add( new THREE.Mesh( sphere, new THREE.MeshBasicMaterial( { color: 0xf482c6 } ) ) );
 	light2.position.set( 40, 30, -30 );
 
 	lightGroup.add( light2 );
-	// scene.add( light2 );
+	scene.add( light2 );
 
 	var directionalLight = new THREE.DirectionalLight( 0xffffff, 0.5 );
-	// directionalLight.add( new THREE.Mesh( sphere, new THREE.MeshBasicMaterial( { color: 0xffffff } ) ) );
+	directionalLight.add( new THREE.Mesh( sphere, new THREE.MeshBasicMaterial( { color: 0xffffff } ) ) );
 	directionalLight.position.set( 0, 1, -10 );
 
 	lightGroup.add( directionalLight );
-	// scene.add( directionalLight )
+	scene.add( directionalLight )
 
 	var directionalLight2 = new THREE.DirectionalLight( 0xffffff, 0.5 );
-	// directionalLight.add( new THREE.Mesh( sphere, new THREE.MeshBasicMaterial( { color: 0xffffff } ) ) );
+	directionalLight.add( new THREE.Mesh( sphere, new THREE.MeshBasicMaterial( { color: 0xffffff } ) ) );
 	directionalLight2.position.set( 0, 1, 40 );
 
 	lightGroup.add( directionalLight2 );
-	// scene.add( directionalLight2 )
+	scene.add( directionalLight2 )
 
-	scene.add ( lightGroup );
+	// scene.add ( lightGroup );
 
 	scene.add( new THREE.AmbientLight( 0x000000 ) );
 
@@ -317,12 +317,14 @@ function init() {
 
 	group.add( mesh7 );
 
-	//shape8 (shape g.)
+	//shape8 (shape h.)
 
 	var shape8 = new THREE.Shape();
 
 	shape8.moveTo( 0, 0 );
-	shape8.bezierCurveTo( 0, 0, 0, 12, 0, 12 );
+	shape8.bezierCurveTo( -1, -1, -1, 2, -1, 2 );
+	shape8.bezierCurveTo( -1, 2, 0, 3, 0, 3 );
+	shape8.bezierCurveTo( 0, 3 , -2, 5, -2, 5 );
 
 
 
@@ -333,8 +335,8 @@ function init() {
 	mesh8 = new THREE.Mesh( geometry8, new THREE.MeshPhongMaterial( { color: 0xffffff } ) );
 
 	mesh8.scale.set(1.9,1.9,1.9);
-	mesh8.position.x = 15;
-	mesh8.position.y = -30;
+	mesh8.position.x = -15;
+	mesh8.position.y = -25;
 
 	group.add( mesh8 );
 
