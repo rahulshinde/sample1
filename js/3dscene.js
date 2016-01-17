@@ -32,7 +32,7 @@ animate();
 function init() {
 	scene = new THREE.Scene();
 	camera = new THREE.PerspectiveCamera( 50, window.innerWidth / window.innerHeight, 1, 1000 );
-	camera.position.z = 125;
+	camera.position.z = 190;
 
 	var cameraControls;
 
@@ -54,35 +54,35 @@ function init() {
 
 	//orange
 	light1 = new THREE.PointLight( 0xf4bd82, 1, 4500 );
-	light1.add( new THREE.Mesh( sphere, new THREE.MeshBasicMaterial( { color: 0xf4bd82 } ) ) );
-	light1.position.set( -40, 0, -10 );
+	// light1.add( new THREE.Mesh( sphere, new THREE.MeshBasicMaterial( { color: 0xf4bd82 } ) ) );
+	light1.position.set( -40, -40, 0 );
 
 	lightGroup.add( light1 );
-	scene.add( light1 );
+	// scene.add( light1 );
 
 	//pink
 	light2 = new THREE.PointLight( 0xfc86a8, 1, 4500 );
-	light2.add( new THREE.Mesh( sphere, new THREE.MeshBasicMaterial( { color: 0xf482c6 } ) ) );
-	light2.position.set( 40, 30, -30 );
+	// light2.add( new THREE.Mesh( sphere, new THREE.MeshBasicMaterial( { color: 0xf482c6 } ) ) );
+	light2.position.set( 40, 40, 0 );
 
 	lightGroup.add( light2 );
-	scene.add( light2 );
+	// scene.add( light2 );
 
 	var directionalLight = new THREE.DirectionalLight( 0xffffff, 0.5 );
-	directionalLight.add( new THREE.Mesh( sphere, new THREE.MeshBasicMaterial( { color: 0xffffff } ) ) );
-	directionalLight.position.set( 0, 1, -10 );
+	// directionalLight.add( new THREE.Mesh( sphere, new THREE.MeshBasicMaterial( { color: 0xffffff } ) ) );
+	directionalLight.position.set( 0, 1, 0 );
 
-	lightGroup.add( directionalLight );
+	// lightGroup.add( directionalLight );
 	scene.add( directionalLight )
 
 	var directionalLight2 = new THREE.DirectionalLight( 0xffffff, 0.5 );
-	directionalLight.add( new THREE.Mesh( sphere, new THREE.MeshBasicMaterial( { color: 0xffffff } ) ) );
+	// directionalLight.add( new THREE.Mesh( sphere, new THREE.MeshBasicMaterial( { color: 0xffffff } ) ) );
 	directionalLight2.position.set( 0, 1, 40 );
 
-	lightGroup.add( directionalLight2 );
+	// lightGroup.add( directionalLight2 );
 	scene.add( directionalLight2 )
 
-	// scene.add ( lightGroup );
+	scene.add ( lightGroup );
 
 	scene.add( new THREE.AmbientLight( 0x000000 ) );
 
@@ -325,6 +325,7 @@ function init() {
 	shape8.bezierCurveTo( -1, -1, -1, 2, -1, 2 );
 	shape8.bezierCurveTo( -1, 2, 0, 3, 0, 3 );
 	shape8.bezierCurveTo( 0, 3 , -2, 5, -2, 5 );
+	shape8.bezierCurveTo( -2, 5, 1, 8, 1, 8 );
 
 
 
@@ -388,8 +389,8 @@ function animate() {
 
 function render() {
 
-	lightGroup.rotation.x += rotationSpeed;
-	lightGroup.rotation.y += rotationSpeed;
+	// lightGroup.rotation.x += rotationSpeed;
+	// lightGroup.rotation.y += rotationSpeed;
 	lightGroup.rotation.z += rotationSpeed;
 
 	renderer.render(scene, camera);

@@ -71,3 +71,17 @@ body {
 	height: 100%;
 	width: 100%;
 }
+
+.instructions {
+	position: fixed;
+	width: 100%;
+	text-align: center;
+	top: 20px;
+}
+
+.instructions h1 {
+	margin: auto;
+	padding: 10px;
+	color: white;
+	font-family: monospace;
+}
