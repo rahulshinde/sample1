@@ -326,6 +326,21 @@ function init() {
 	shape8.bezierCurveTo( -1, 2, 0, 3, 0, 3 );
 	shape8.bezierCurveTo( 0, 3 , -2, 5, -2, 5 );
 	shape8.bezierCurveTo( -2, 5, 1, 8, 1, 8 );
+	shape8.bezierCurveTo( 1, 8, 0, 9, 1, 10 );
+	shape8.bezierCurveTo( 2, 11, 3, 8, 4, 9 );
+	shape8.bezierCurveTo( 2, 11, 3, 8, 4, 9 );
+	shape8.bezierCurveTo( 5, 10, 5, 9, 5, 9 );
+	shape8.bezierCurveTo( 5, 6, 8, 8, 8, 8 );
+	shape8.bezierCurveTo( 8, 8, 13, 7, 13, 9 );
+	shape8.bezierCurveTo( 8, 8, 13, 10, 14, 10 );
+	shape8.bezierCurveTo( 13, 10, 16, 14, 15, 14 );
+	shape8.bezierCurveTo( 15, 14, 13, 14, 14, 14 ); //might be an issue
+	shape8.bezierCurveTo( 13, 12, 20, 17, 20, 17 );
+	shape8.bezierCurveTo( 20, 17, 18, 16, 22, 14 );
+	shape8.bezierCurveTo( 25, 12, 26, 8, 26, 8 );
+	shape8.bezierCurveTo( 27, -2, 16, 0, 16, 0 );
+	shape8.bezierCurveTo( 16, 0, 13, 4, 13, 4 );
+	shape8.bezierCurveTo( 16, 0, 13, 4, 10, 2 );
 
 
 
