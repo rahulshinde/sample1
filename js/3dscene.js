@@ -106,7 +106,7 @@ function init() {
 	shape1.bezierCurveTo( 3, 0, 2, -1, 2, -1 );
 	shape1.bezierCurveTo( 2, -1, 1, 1, 0, 0 );
 
-	var extrudeSetting1 = { amount: 2, bevelEnabled: false, bevelSegments: 4, steps: 3, bevelSize: 1, bevelThickness: 1 };
+	var extrudeSetting1 = { amount: 1, bevelEnabled: false, bevelSegments: 4, steps: 3, bevelSize: 1, bevelThickness: 1 };
 
 	var geometry1 = new THREE.ExtrudeGeometry( shape1, extrudeSetting1 );
 
@@ -115,7 +115,7 @@ function init() {
 	mesh1.scale.set(1.9,1.9,1.9);
 
 	mesh1.position.x = -40;
-	mesh1.position.y = 3;
+	mesh1.position.y = 7;
 
 	group.add( mesh1 );
 
@@ -137,7 +137,7 @@ function init() {
 
 	var extrudeSetting2 = { amount: 2, bevelEnabled: false, bevelSegments: 4, steps: 3, bevelSize: 1, bevelThickness: 1 };
 
-	var geometry2 = new THREE.ExtrudeGeometry( shape2, extrudeSetting2 );
+	var geometry2 = new THREE.ExtrudeGeometry( shape2, extrudeSetting1 );
 
 	mesh2 = new THREE.Mesh( geometry2, new THREE.MeshPhongMaterial( { color: 0xffffff } ) );
 
@@ -160,7 +160,7 @@ function init() {
 
 	var extrudeSetting3 = { amount: 2, bevelEnabled: false, bevelSegments: 4, steps: 3, bevelSize: 1, bevelThickness: 1 };
 
-	var geometry3 = new THREE.ExtrudeGeometry( shape3, extrudeSetting3 );
+	var geometry3 = new THREE.ExtrudeGeometry( shape3, extrudeSetting1 );
 
 	mesh3 = new THREE.Mesh( geometry3, new THREE.MeshPhongMaterial( { color: 0xffffff } ) );
 
@@ -191,13 +191,13 @@ function init() {
 
 	var extrudeSetting4 = { amount: 2, bevelEnabled: false, bevelSegments: 4, steps: 3, bevelSize: 1, bevelThickness: 1 };
 
-	var geometry4 = new THREE.ExtrudeGeometry( shape4, extrudeSetting4 );
+	var geometry4 = new THREE.ExtrudeGeometry( shape4, extrudeSetting1 );
 
 	mesh4 = new THREE.Mesh( geometry4, new THREE.MeshPhongMaterial( { color: 0xffffff } ) );
 
 	mesh4.scale.set(1.9,1.9,1.9);
 	mesh4.rotation.z = 1.9;
-	mesh4.position.x = 43;
+	mesh4.position.x = 45;
 	mesh4.position.y = -10;
 
 	group.add( mesh4 );
@@ -252,13 +252,13 @@ function init() {
 
 	var extrudeSetting5 = { amount: 2, bevelEnabled: false, bevelSegments: 4, steps: 3, bevelSize: 1, bevelThickness: 1 };
 
-	var geometry5 = new THREE.ExtrudeGeometry( shape5, extrudeSetting5 );
+	var geometry5 = new THREE.ExtrudeGeometry( shape5, extrudeSetting1 );
 
 	mesh5 = new THREE.Mesh( geometry5, new THREE.MeshPhongMaterial( { color: 0xffffff } ) );
 
 	mesh5.scale.set(1.9,1.9,1.9);
 	mesh5.position.x = -25;
-	mesh5.position.y =0;
+	mesh5.position.y = 3;
 
 	group.add( mesh5 );
 
@@ -284,12 +284,12 @@ function init() {
 
 	var extrudeSetting6 = { amount: 2, bevelEnabled: false, bevelSegments: 4, steps: 3, bevelSize: 1, bevelThickness: 1 };
 
-	var geometry6 = new THREE.ExtrudeGeometry( shape6, extrudeSetting6 );
+	var geometry6 = new THREE.ExtrudeGeometry( shape6, extrudeSetting1 );
 
 	mesh6 = new THREE.Mesh( geometry6, new THREE.MeshPhongMaterial( { color: 0xffffff } ) );
 
 	mesh6.scale.set(1.9,1.9,1.9);
-	mesh6.position.x = 5;
+	mesh6.position.x = 6;
 	mesh6.position.y = -39;
 
 	group.add( mesh6 );
@@ -306,7 +306,7 @@ function init() {
 
 	var extrudeSetting7 = { amount: 2, bevelEnabled: false, bevelSegments: 4, steps: 3, bevelSize: 1, bevelThickness: 1 };
 
-	var geometry7 = new THREE.ExtrudeGeometry( shape7, extrudeSetting7 );
+	var geometry7 = new THREE.ExtrudeGeometry( shape7, extrudeSetting1 );
 
 	mesh7 = new THREE.Mesh( geometry7, new THREE.MeshPhongMaterial( { color: 0xffffff } ) );
 
@@ -328,25 +328,32 @@ function init() {
 	shape8.bezierCurveTo( -2, 5, 1, 8, 1, 8 );
 	shape8.bezierCurveTo( 1, 8, 0, 9, 1, 10 );
 	shape8.bezierCurveTo( 2, 11, 3, 8, 4, 9 );
-	shape8.bezierCurveTo( 2, 11, 3, 8, 4, 9 );
 	shape8.bezierCurveTo( 5, 10, 5, 9, 5, 9 );
 	shape8.bezierCurveTo( 5, 6, 8, 8, 8, 8 );
 	shape8.bezierCurveTo( 8, 8, 13, 7, 13, 9 );
 	shape8.bezierCurveTo( 8, 8, 13, 10, 14, 10 );
 	shape8.bezierCurveTo( 13, 10, 16, 14, 15, 14 );
-	shape8.bezierCurveTo( 15, 14, 13, 14, 14, 14 ); //might be an issue
-	shape8.bezierCurveTo( 13, 12, 20, 17, 20, 17 );
+	shape8.bezierCurveTo( 15, 14, 13, 14, 14, 15 ); //might be an issue
+	shape8.bezierCurveTo( 14, 14, 20, 17, 20, 17 );
 	shape8.bezierCurveTo( 20, 17, 18, 16, 22, 14 );
 	shape8.bezierCurveTo( 25, 12, 26, 8, 26, 8 );
 	shape8.bezierCurveTo( 27, -2, 16, 0, 16, 0 );
 	shape8.bezierCurveTo( 16, 0, 13, 4, 13, 4 );
-	shape8.bezierCurveTo( 16, 0, 13, 4, 10, 2 );
-
+	shape8.bezierCurveTo( 10, 4, 11, 3, 10, 2 );
+	shape8.bezierCurveTo( 9, 1, 8, 4, 8, 4 );
+	shape8.bezierCurveTo( 8, 4, 6, 5, 6, 5 );
+	shape8.bezierCurveTo( 6, 5, 5, 4, 5, 4 );
+	shape8.bezierCurveTo( 5, 4, 5, 3, 5, 3 );
+	shape8.bezierCurveTo( 5, 3, 4, 3, 4, 2 );
+	shape8.bezierCurveTo( 4, 1, 2, 1, 2, 1 );
+	shape8.bezierCurveTo( 2, 1, 2, 0, 2, 0 );
+	shape8.bezierCurveTo( 2, 0, 1, 1, 1, 1 );
+	shape8.bezierCurveTo( 1, 1, 0, 1, 0, 0 );
 
 
 	var extrudeSetting8 = { amount: 2, bevelEnabled: false, bevelSegments: 4, steps: 3, bevelSize: 1, bevelThickness: 1 };
 
-	var geometry8 = new THREE.ExtrudeGeometry( shape8, extrudeSetting8 );
+	var geometry8 = new THREE.ExtrudeGeometry( shape8, extrudeSetting1 );
 
 	mesh8 = new THREE.Mesh( geometry8, new THREE.MeshPhongMaterial( { color: 0xffffff } ) );
 
@@ -359,10 +366,10 @@ function init() {
 	scene.add( group );
 
 	/////////////////////
-	////adding walls/////
+	////adding image/////
 	/////////////////////
 
-	//wall 1
+	//image 1
 
 	var imageFrame = new THREE.BoxGeometry( 150, 140, 0.1 );
 	var image1Material = new THREE.MeshBasicMaterial( { map:THREE.ImageUtils.loadTexture('img/1.jpg') , side: THREE.DoubleSide} );
