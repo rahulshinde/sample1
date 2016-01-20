@@ -26,10 +26,29 @@ var closedSpline;
 
 var container = document.getElementById( 'container' );
 
+var bevelValue1 = Math.floor((Math.random() * 10) + 1),
+	bevelValue2 = Math.floor((Math.random() * 10) + 1),
+	bevelValue3 = Math.floor((Math.random() * 10) + 1),
+	bevelValue4 = Math.floor((Math.random() * 10) + 1),
+	bevelValue5 = Math.floor((Math.random() * 10) + 1),
+	bevelValue6 = Math.floor((Math.random() * 10) + 1),
+	bevelValue7 = Math.floor((Math.random() * 10) + 1),
+	bevelValue8 = Math.floor((Math.random() * 10) + 1);
+
+$('.slider1').val(bevelValue1);
+$('.slider2').val(bevelValue2);
+$('.slider3').val(bevelValue3);
+$('.slider4').val(bevelValue4);
+$('.slider5').val(bevelValue5);
+$('.slider6').val(bevelValue6);
+$('.slider7').val(bevelValue7);
+$('.slider8').val(bevelValue8);
+
 init();
 animate();
 
 function init() {
+
 	scene = new THREE.Scene();
 	camera = new THREE.PerspectiveCamera( 50, window.innerWidth / window.innerHeight, 1, 1000 );
 	camera.position.z = 190;
@@ -106,7 +125,7 @@ function init() {
 	shape1.bezierCurveTo( 3, 0, 2, -1, 2, -1 );
 	shape1.bezierCurveTo( 2, -1, 1, 1, 0, 0 );
 
-	var extrudeSetting1 = { amount: 1, bevelEnabled: false, bevelSegments: 4, steps: 3, bevelSize: 1, bevelThickness: 1 };
+	var extrudeSetting1 = { amount: bevelValue1, bevelEnabled: false};
 
 	var geometry1 = new THREE.ExtrudeGeometry( shape1, extrudeSetting1 );
 
@@ -118,6 +137,23 @@ function init() {
 	mesh1.position.y = 7;
 
 	group.add( mesh1 );
+
+	$('.slider1').on('change', function() {
+		bevelValue1 = $(this).val();
+
+		group.remove( mesh1 );
+
+		extrudeSetting1 = { amount: bevelValue1, bevelEnabled: false};
+		geometry1 = new THREE.ExtrudeGeometry( shape1, extrudeSetting1 );
+		mesh1 = new THREE.Mesh( geometry1, new THREE.MeshPhongMaterial( { color: 0xffffff } ) );
+
+		mesh1.scale.set(1.9,1.9,1.9);
+
+		mesh1.position.x = -40;
+		mesh1.position.y = 7;
+	
+		group.add( mesh1 );
+	});
 
 	//shape2 (shape b.)
 
@@ -135,9 +171,9 @@ function init() {
 	shape2.bezierCurveTo( 3, 3, 2, 3, 2, 3 );
 	shape2.bezierCurveTo( 1, 3, 0, 1, 2, 2 );
 
-	var extrudeSetting2 = { amount: 2, bevelEnabled: false, bevelSegments: 4, steps: 3, bevelSize: 1, bevelThickness: 1 };
+	var extrudeSetting2 = { amount: bevelValue2, bevelEnabled: false, bevelSegments: 4, steps: 3, bevelSize: 1, bevelThickness: 1 };
 
-	var geometry2 = new THREE.ExtrudeGeometry( shape2, extrudeSetting1 );
+	var geometry2 = new THREE.ExtrudeGeometry( shape2, extrudeSetting2 );
 
 	mesh2 = new THREE.Mesh( geometry2, new THREE.MeshPhongMaterial( { color: 0xffffff } ) );
 
@@ -146,6 +182,23 @@ function init() {
 	mesh2.position.y = 35;
 
 	group.add( mesh2 );
+
+	$('.slider2').on('change', function() {
+		bevelValue2 = $(this).val();
+		console.log(bevelValue2);
+
+		group.remove( mesh2 );
+
+		extrudeSetting2 = { amount: bevelValue2, bevelEnabled: false};
+		geometry2 = new THREE.ExtrudeGeometry( shape2, extrudeSetting2 );
+		mesh2 = new THREE.Mesh( geometry2, new THREE.MeshPhongMaterial( { color: 0xffffff } ) );
+
+		mesh2.scale.set(1.9, 1.9,1.9);
+		mesh2.position.x = -20;
+		mesh2.position.y = 35;
+	
+		group.add( mesh2 );
+	});
 
 	//shape3 (shape c.)
 
@@ -158,9 +211,9 @@ function init() {
 	shape3.bezierCurveTo( 6, 1, 4, 1, 5, 0 );
 	shape3.bezierCurveTo( 6, -1, 0, 0, 0, 0 );
 
-	var extrudeSetting3 = { amount: 2, bevelEnabled: false, bevelSegments: 4, steps: 3, bevelSize: 1, bevelThickness: 1 };
+	var extrudeSetting3 = { amount: bevelValue3, bevelEnabled: false, bevelSegments: 4, steps: 3, bevelSize: 1, bevelThickness: 1 };
 
-	var geometry3 = new THREE.ExtrudeGeometry( shape3, extrudeSetting1 );
+	var geometry3 = new THREE.ExtrudeGeometry( shape3, extrudeSetting3 );
 
 	mesh3 = new THREE.Mesh( geometry3, new THREE.MeshPhongMaterial( { color: 0xffffff } ) );
 
@@ -169,6 +222,23 @@ function init() {
 	mesh3.position.y = -5;
 
 	group.add( mesh3 );
+
+	$('.slider3').on('change', function() {
+		bevelValue3 = $(this).val();
+		console.log(bevelValue2);
+
+		group.remove( mesh3 );
+
+		extrudeSetting3 = { amount: bevelValue3, bevelEnabled: false};
+		geometry3 = new THREE.ExtrudeGeometry( shape3, extrudeSetting3 );
+		mesh3 = new THREE.Mesh( geometry3, new THREE.MeshPhongMaterial( { color: 0xffffff } ) );
+
+		mesh3.scale.set(1.9, 1.9, 1.9);
+		mesh3.position.x = -4;
+		mesh3.position.y = -5;
+	
+		group.add( mesh3 );
+	});
 
 	//shape4 (shape d.)
 
@@ -189,9 +259,9 @@ function init() {
 	shape4.bezierCurveTo( 5, 1, 3, -1, 3, -1 );
 	shape4.bezierCurveTo( 2, 0, 0, 0, 0, 0 );
 
-	var extrudeSetting4 = { amount: 2, bevelEnabled: false, bevelSegments: 4, steps: 3, bevelSize: 1, bevelThickness: 1 };
+	var extrudeSetting4 = { amount: bevelValue4, bevelEnabled: false, bevelSegments: 4, steps: 3, bevelSize: 1, bevelThickness: 1 };
 
-	var geometry4 = new THREE.ExtrudeGeometry( shape4, extrudeSetting1 );
+	var geometry4 = new THREE.ExtrudeGeometry( shape4, extrudeSetting4 );
 
 	mesh4 = new THREE.Mesh( geometry4, new THREE.MeshPhongMaterial( { color: 0xffffff } ) );
 
@@ -201,6 +271,24 @@ function init() {
 	mesh4.position.y = -10;
 
 	group.add( mesh4 );
+
+	$('.slider4').on('change', function() {
+		bevelValue4 = $(this).val();
+		// console.log(bevelValue4);
+
+		group.remove( mesh4 );
+
+		extrudeSetting4 = { amount: bevelValue4, bevelEnabled: false};
+		geometry4 = new THREE.ExtrudeGeometry( shape4, extrudeSetting4 );
+		mesh4 = new THREE.Mesh( geometry4, new THREE.MeshPhongMaterial( { color: 0xffffff } ) );
+
+		mesh4.scale.set(1.9,1.9,1.9);
+		mesh4.rotation.z = 1.9;
+		mesh4.position.x = 45;
+		mesh4.position.y = -10;
+	
+		group.add( mesh4 );
+	});
 
 	//shape5 (shape e.)
 
@@ -250,7 +338,7 @@ function init() {
 	shape5.bezierCurveTo( 12, 0, 9, 0, 9, 0 );
 	shape5.bezierCurveTo( 4, -1, 4, 1, 4, 1 );
 
-	var extrudeSetting5 = { amount: 2, bevelEnabled: false, bevelSegments: 4, steps: 3, bevelSize: 1, bevelThickness: 1 };
+	var extrudeSetting5 = { amount: bevelValue5, bevelEnabled: false, bevelSegments: 4, steps: 3, bevelSize: 1, bevelThickness: 1 };
 
 	var geometry5 = new THREE.ExtrudeGeometry( shape5, extrudeSetting1 );
 
@@ -262,7 +350,24 @@ function init() {
 
 	group.add( mesh5 );
 
-		//shape6 (shape f.)
+	$('.slider5').on('change', function() {
+		bevelValue5 = $(this).val();
+		console.log(bevelValue5);
+
+		group.remove( mesh5 );
+
+		extrudeSetting5 = { amount: bevelValue5, bevelEnabled: false};
+		geometry5 = new THREE.ExtrudeGeometry( shape5, extrudeSetting5 );
+		mesh5 = new THREE.Mesh( geometry5, new THREE.MeshPhongMaterial( { color: 0xffffff } ) );
+
+		mesh5.scale.set(1.9,1.9,1.9);
+		mesh5.position.x = -25;
+		mesh5.position.y = 3;
+	
+		group.add( mesh5 );
+	});
+
+	//shape6 (shape f.)
 
 	var shape6 = new THREE.Shape();
 
@@ -282,9 +387,9 @@ function init() {
 
 
 
-	var extrudeSetting6 = { amount: 2, bevelEnabled: false, bevelSegments: 4, steps: 3, bevelSize: 1, bevelThickness: 1 };
+	var extrudeSetting6 = { amount: bevelValue6, bevelEnabled: false, bevelSegments: 4, steps: 3, bevelSize: 1, bevelThickness: 1 };
 
-	var geometry6 = new THREE.ExtrudeGeometry( shape6, extrudeSetting1 );
+	var geometry6 = new THREE.ExtrudeGeometry( shape6, extrudeSetting6 );
 
 	mesh6 = new THREE.Mesh( geometry6, new THREE.MeshPhongMaterial( { color: 0xffffff } ) );
 
@@ -293,6 +398,23 @@ function init() {
 	mesh6.position.y = -39;
 
 	group.add( mesh6 );
+
+	$('.slider6').on('change', function() {
+		bevelValue6 = $(this).val();
+		// console.log(bevelValue6);
+
+		group.remove( mesh6 );
+
+		extrudeSetting6 = { amount: bevelValue6, bevelEnabled: false};
+		geometry6 = new THREE.ExtrudeGeometry( shape6, extrudeSetting6 );
+		mesh6 = new THREE.Mesh( geometry6, new THREE.MeshPhongMaterial( { color: 0xffffff } ) );
+
+		mesh6.scale.set(1.9,1.9,1.9);
+		mesh6.position.x = 6;
+		mesh6.position.y = -39;
+	
+		group.add( mesh6 );
+	});
 
 	//shape7 (shape g.)
 
@@ -304,9 +426,9 @@ function init() {
 
 
 
-	var extrudeSetting7 = { amount: 2, bevelEnabled: false, bevelSegments: 4, steps: 3, bevelSize: 1, bevelThickness: 1 };
+	var extrudeSetting7 = { amount: bevelValue7, bevelEnabled: false, bevelSegments: 4, steps: 3, bevelSize: 1, bevelThickness: 1 };
 
-	var geometry7 = new THREE.ExtrudeGeometry( shape7, extrudeSetting1 );
+	var geometry7 = new THREE.ExtrudeGeometry( shape7, extrudeSetting7 );
 
 	mesh7 = new THREE.Mesh( geometry7, new THREE.MeshPhongMaterial( { color: 0xffffff } ) );
 
@@ -316,6 +438,24 @@ function init() {
 	mesh7.position.y = -30;
 
 	group.add( mesh7 );
+
+	$('.slider7').on('change', function() {
+		bevelValue7 = $(this).val();
+		console.log(bevelValue7);
+
+		group.remove( mesh7 );
+
+		extrudeSetting7 = { amount: bevelValue7, bevelEnabled: false};
+		geometry7 = new THREE.ExtrudeGeometry( shape7, extrudeSetting7 );
+		mesh7 = new THREE.Mesh( geometry7, new THREE.MeshPhongMaterial( { color: 0xffffff } ) );
+
+		mesh7.scale.set(1.9,1.9,1.9);
+		mesh7.rotation.z = -1.2;
+		mesh7.position.x = 15;
+		mesh7.position.y = -30;
+	
+		group.add( mesh7 );
+	});
 
 	//shape8 (shape h.)
 
@@ -351,9 +491,9 @@ function init() {
 	shape8.bezierCurveTo( 1, 1, 0, 1, 0, 0 );
 
 
-	var extrudeSetting8 = { amount: 2, bevelEnabled: false, bevelSegments: 4, steps: 3, bevelSize: 1, bevelThickness: 1 };
+	var extrudeSetting8 = { amount: bevelValue8, bevelEnabled: false, bevelSegments: 4, steps: 3, bevelSize: 1, bevelThickness: 1 };
 
-	var geometry8 = new THREE.ExtrudeGeometry( shape8, extrudeSetting1 );
+	var geometry8 = new THREE.ExtrudeGeometry( shape8, extrudeSetting8 );
 
 	mesh8 = new THREE.Mesh( geometry8, new THREE.MeshPhongMaterial( { color: 0xffffff } ) );
 
@@ -362,6 +502,23 @@ function init() {
 	mesh8.position.y = -25;
 
 	group.add( mesh8 );
+
+	$('.slider8').on('change', function() {
+		bevelValue8 = $(this).val();
+		console.log(bevelValue8);
+
+		group.remove( mesh8 );
+
+		extrudeSetting8 = { amount: bevelValue8, bevelEnabled: false};
+		geometry8 = new THREE.ExtrudeGeometry( shape8, extrudeSetting8 );
+		mesh8 = new THREE.Mesh( geometry8, new THREE.MeshPhongMaterial( { color: 0xffffff } ) );
+
+		mesh8.scale.set(1.9,1.9,1.9);
+		mesh8.position.x = -15;
+		mesh8.position.y = -25;
+	
+		group.add( mesh8 );
+	});
 
 	scene.add( group );
 
@@ -410,7 +567,6 @@ function animate() {
 }	
 
 function render() {
-
 	// lightGroup.rotation.x += rotationSpeed;
 	// lightGroup.rotation.y += rotationSpeed;
 	lightGroup.rotation.z += rotationSpeed;

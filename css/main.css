@@ -85,3 +85,27 @@ body {
 	color: white;
 	font-family: monospace;
 }
+
+.sliders {
+	position: fixed;
+	right: 60px;
+	top: 130px;
+	line-height: 30px;
+
+}
+
+input[type="range"].slide-style {
+	-webkit-appearance: none;
+	background-color: rgba(0,0,0,0);
+	height: 5px;
+	border: 1px solid white;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	background-color: white;
+	width: 15px;
+	height: 15px;
+	border-radius: 10px;
+	/*border: 1px solid white;*/
+}
